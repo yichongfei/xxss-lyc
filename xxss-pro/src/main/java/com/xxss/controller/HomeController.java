@@ -497,4 +497,10 @@ public class HomeController {
 	public String goTag() {
 		return "tag";
 	}
+	
+	
+	@RequestMapping("/av-girls")
+	public String goAvGirls() {
+		return "av-girls";
+	}
 }
