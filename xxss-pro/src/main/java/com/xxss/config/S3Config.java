@@ -11,6 +11,7 @@ public class S3Config {
 	
 	public static final String OWNER = "XXSS";
 	
-	public static final String[] KINDS = {"america/","japan/","china/","pornhub-asia/","dongman/"};
+	public static final String[] KINDS = {"america/","japan/","china/","pornhub-asia/","dongman/",
+			"yanshe/","gangjiao/"};
 	
 }
