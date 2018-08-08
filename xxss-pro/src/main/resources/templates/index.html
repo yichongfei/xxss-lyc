@@ -1,0 +1,742 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+
+<meta charset="utf-8"></meta>
+<title>形形色色华人社区</title>
+<meta name="description"
+	content="中国成人视频网站,自拍视频网站"></meta>
+<meta name="author" content="www.xxss2018.com"></meta>
+
+
+<meta name="viewport"
+	content="width=device-width, initial-scale=1, maximum-scale=1"></meta>
+
+<link rel="stylesheet" href="../css/zerogrid.css" />
+<link rel="stylesheet" href="../css/style.css" />
+<link rel="stylesheet" href="../css/menu.css" />
+<link rel="stylesheet" href="../css/owl.carousel.css" />
+<link rel="stylesheet" href="../css/owl.theme.css" />
+<link rel="stylesheet" href="../css/owl.carousel.css" />
+
+<link href="../font-awesome/css/font-awesome.min.css" rel="stylesheet"
+	type="text/css"></link>
+<script src="https://cdn.bootcss.com/jquery/2.2.4/jquery.min.js"></script>
+
+<style type="text/css">
+h3, .h3 {
+	font-size: 18px !important;
+	color: #ffa700e0 !important
+}
+header ul li a {
+    
+    color: #f18a07;
+}
+</style>
+
+
+
+<script type="text/javascript">
+	/* <![CDATA[ */
+	var baseS3URL = "https://s3-ap-southeast-1.amazonaws.com/talent-xinjiapo/";
+	var picHeight=240 ;
+	$(document).ready(
+			function() {
+				//获取最新的视频图片
+				$.ajax({
+					url : "/video/getNewVideoPic",
+					success : function(data) {
+						for (var i = 1; i < data.length + 1; i++) {
+							$("#most-new-" + i).attr("src",
+									baseS3URL + data[i - 1].picKey);
+							$("#most-new-" + i).parent().attr("data-id",
+									data[i - 1].id);
+						}
+						picHeight=$("most-new-2").height();
+					}
+				});
+				$.ajax({
+					url : "/video/getMostViewedPic",
+					success : function(data) {
+						for (var i = 1; i < data.length + 1; i++) {
+							$("#most-view-" + i + " img").attr("src",
+									baseS3URL + data[i - 1].picKey);
+							$("#most-view-" + i + " img").attr("height",picHeight+"px");
+							$("#most-view-" + i + " a").attr("data-id",
+									data[i - 1].id);
+							$("#most-view-" + i + " .vid-name").attr("alt",
+									data[i - 1].title);
+							$("#most-view-" + i + " .owner").text(
+									data[i - 1].owner);
+							$("#most-view-" + i + " .uploadtime").text(
+									formatDateTime(data[i - 1].uploadTime));
+							$("#most-view-" + i + " .vid-name").text(
+									data[i - 1].title);
+							$("#most-view-" + i + " .playtimes").html(
+									'<i class="fa fa-heart"></i>'
+											+ data[i - 1].playTimes);
+						}
+					}
+				});
+				$.ajax({
+					url : "/video/getChinaViewPic",
+					success : function(data) {
+						for (var i = 1; i < data.length + 1; i++) {
+							$("#china-view-" + i + " img").attr("src",
+									baseS3URL + data[i - 1].picKey);
+							$("#china-view-" + i + " img").attr("height",picHeight+"px");
+							$("#china-view-" + i + " a").attr("data-id",
+									data[i - 1].id);
+							$("#china-view-" + i + " .vid-name").attr("alt",
+									data[i - 1].title);
+							$("#china-view-" + i + " .owner").text(
+									data[i - 1].owner);
+							$("#china-view-" + i + " .uploadtime").text(
+									formatDateTime(data[i - 1].uploadTime));
+							$("#china-view-" + i + " .vid-name").text(
+									data[i - 1].title);
+							$("#china-view-" + i + " .playtimes").html(
+									'<i class="fa fa-heart"></i>'
+											+ data[i - 1].playTimes);
+						}
+					}
+				});
+				$.ajax({
+					url : "/video/getAmericaViewPic",
+					success : function(data) {
+						for (var i = 1; i < data.length + 1; i++) {
+							$("#america-view-" + i + " img").attr("src",
+									baseS3URL + data[i - 1].picKey);
+							$("#america-view-" + i + " img").attr("height",picHeight+"px");
+							$("#america-view-" + i + " a").attr("data-id",
+									data[i - 1].id);
+							$("#america-view-" + i + " .vid-name").attr("alt",
+									data[i - 1].title);
+							$("#america-view-" + i + " .owner").text(
+									data[i - 1].owner);
+							$("#america-view-" + i + " .uploadtime").text(
+									formatDateTime(data[i - 1].uploadTime));
+							$("#america-view-" + i + " .vid-name").text(
+									data[i - 1].title);
+							$("#america-view-" + i + " .playtimes").html(
+									'<i class="fa fa-heart"></i>'
+											+ data[i - 1].playTimes);
+						}
+						
+						
+					}
+				});
+				
+				
+				
+				
+				
+			});
+	function goVideoPlay(element) {
+		id = $(element).attr('data-id');
+		if (id !== '' && id !== null) {
+			window.location = "/goVideoPlay?id=" + id;
+		}
+
+	}
+
+	
+
+	
+	
+	/*]]> */
+</script>
+
+
+</head>
+<body id="wrapper">
+	<div class="wrap-body">
+		<header>
+			<div class="container-fluid">
+				<div class="row-fluid">
+					<div class="span12">
+						<ul class="breadcrumb">
+							<li ><a href="/">形形色色</a> </li>
+							<li id="registerButton"><a href="/register" >注册</a></li>
+							<li id="loginButton"><a href="/login">登录</a></li>
+							<li><a href="/tuiguang">推广</a></li>
+							<li><a href="/chongzhi">充值</a></li>
+							<li><a href="http://www.luoboka.com/links/F787442B794187A9" target="_blank">购卡</a></li>
+							<li style="float: right; display: none" id="exit"><a  href="javascript:void(0)" onclick = "exit()" > 退出</a></li>
+							<li style="float: right;"><a id="accountInformation" href="/information" th:text ="${session.account.email}" ></a></li>
+						</ul>
+					</div>
+				</div>
+			</div>
+		</header>
+
+		<!--////////////////////////////////////Menu-->
+		<div class="zerogrid">
+			<div class="row">
+				<a href="#" class="nav-toggle">点击展开导航</a>
+				<nav class="cmn-tile-nav">
+					<ul class="clearfix">
+						<li class="colour-7"><a href="javascript:void(0)"
+							rel="sidebar" onclick="alertUrl()">查看最新域名</a></li>
+						<li class="colour-8"><a href="/tag">XXSS视频分类</a></li>
+						<li class="colour-1"><a href="/listHotVideo/0">最多观看</a></li>
+						<li class="colour-3"><a href="/listNewVideo/0">最新视频</a></li>
+						<li class="colour-4"><a href="/listVideo/china/0">国产</a></li>
+						<li class="colour-5"><a href="/listVideo/japan/0">日本</a></li>
+						<li class="colour-6"><a href="/listVideo/america/0">欧美</a></li>
+						<li class="colour-6"><a href="#">广告联系</a></li>
+					</ul>
+				</nav>
+			</div>
+		</div>
+		<!--////////////////////////////////////Container-->
+		<section id="container" class="index-page">
+			<div class="wrap-container zerogrid">
+				<div class="row">
+					<div id="main-content" class="col-4-4">
+						<div class="wrap-content">
+							<section class="vid-tv">
+								<div class="row header">
+									<h2>最多播放</h2>
+								</div>
+								<div class="row">
+									<div id="owl-demo-1" class="owl-carousel">
+										<div class="item wrap-vid" id="most-view-1">
+											<div class="zoom-container">
+												<a class="goVideoPlay" href="javascript:void(0);"
+													onclick="goVideoPlay(this)"> <span class="zoom-caption">
+														<i class="icon-play fa fa-play"></i>
+												</span> <img />
+												</a>
+											</div>
+											<h3 class="vid-name">
+												<a></a>
+											</h3>
+											<div class="info">
+												<h5>
+													By <a href="#" class="owner"></a>
+												</h5>
+												<span class="uploadtime"><i class="fa fa-calendar"></i></span>
+												<span class="playtimes"> <i class="fa fa-heart"></i></span>
+											</div>
+										</div>
+										<div class="item wrap-vid" id="most-view-2">
+											<div class="zoom-container">
+												<a class="goVideoPlay" href="javascript:void(0);"
+													onclick="goVideoPlay(this)"> <span class="zoom-caption">
+														<i class="icon-play fa fa-play"></i>
+												</span> <img />
+												</a>
+											</div>
+											<h3 class="vid-name">
+												<a></a>
+											</h3>
+											<div class="info">
+												<h5>
+													By <a href="#" class="owner"></a>
+												</h5>
+												<span class="uploadtime"><i class="fa fa-calendar"></i></span>
+												<span class="playtimes"><i class="fa fa-heart"></i></span>
+											</div>
+										</div>
+										<div class="item wrap-vid" id="most-view-3">
+											<div class="zoom-container">
+												<a class="goVideoPlay" href="javascript:void(0);"
+													onclick="goVideoPlay(this)"> <span class="zoom-caption">
+														<i class="icon-play fa fa-play"></i>
+												</span> <img />
+												</a>
+											</div>
+											<h3 class="vid-name">
+												<a></a>
+											</h3>
+											<div class="info">
+												<h5>
+													By <a href="#" class="owner"></a>
+												</h5>
+												<span class="uploadtime"><i class="fa fa-calendar"></i></span>
+												<span class="playtimes"><i class="fa fa-heart"></i></span>
+											</div>
+										</div>
+										<div class="item wrap-vid" id="most-view-4">
+											<div class="zoom-container">
+												<a class="goVideoPlay" href="javascript:void(0);"
+													onclick="goVideoPlay(this)"> <span class="zoom-caption">
+														<i class="icon-play fa fa-play"></i>
+												</span> <img />
+												</a>
+											</div>
+											<h3 class="vid-name">
+												<a></a>
+											</h3>
+											<div class="info">
+												<h5>
+													By <a href="#" class="owner"></a>
+												</h5>
+												<span class="uploadtime"><i class="fa fa-calendar"></i></span>
+												<span class="playtimes"><i class="fa fa-heart"></i></span>
+											</div>
+										</div>
+										<div class="item wrap-vid" id="most-view-5">
+											<div class="zoom-container">
+												<a class="goVideoPlay" href="javascript:void(0);"
+													onclick="goVideoPlay(this)"> <span class="zoom-caption">
+														<i class="icon-play fa fa-play"></i>
+												</span> <img />
+												</a>
+											</div>
+											<h3 class="vid-name">
+												<a></a>
+											</h3>
+											<div class="info">
+												<h5>
+													By <a href="#" class="owner"></a>
+												</h5>
+												<span><i class="fa fa-calendar"></i></span> <span
+													class="playtimes"><i class="fa fa-heart"></i></span>
+											</div>
+										</div>
+										<div class="item wrap-vid" id="most-view-6">
+											<div class="zoom-container">
+												<a class="goVideoPlay" href="javascript:void(0);"
+													onclick="goVideoPlay(this)"> <span class="zoom-caption">
+														<i class="icon-play fa fa-play"></i>
+												</span> <img />
+												</a>
+											</div>
+											<h3 class="vid-name">
+												<a></a>
+											</h3>
+											<div class="info">
+												<h5>
+													By <a href="#" class="owner"></a>
+												</h5>
+												<span class="uploadtime"><i class="fa fa-calendar"></i></span>
+												<span class="playtimes"><i class="fa fa-heart"></i></span>
+											</div>
+										</div>
+										<div class="item wrap-vid" id="most-view-7">
+											<div class="zoom-container">
+												<a class="goVideoPlay" href="javascript:void(0);"
+													onclick="goVideoPlay(this)"> <span class="zoom-caption">
+														<i class="icon-play fa fa-play"></i>
+												</span> <img />
+												</a>
+											</div>
+											<h3 class="vid-name">
+												<a></a>
+											</h3>
+											<div class="info">
+												<h5>
+													By <a href="#" class="owner"></a>
+												</h5>
+												<span class="uploadtime"><i class="fa fa-calendar"></i></span>
+												<span class="playtimes"><i class="fa fa-heart"></i></span>
+											</div>
+										</div>
+										<div class="item wrap-vid" id="most-view-8">
+											<div class="zoom-container">
+												<a class="goVideoPlay" href="javascript:void(0);"
+													onclick="goVideoPlay(this)"> <span class="zoom-caption">
+														<i class="icon-play fa fa-play"></i>
+												</span> <img />
+												</a>
+											</div>
+											<h3 class="vid-name">
+												<a></a>
+											</h3>
+											<div class="info">
+												<h5>
+													By <a href="#" class="owner"></a>
+												</h5>
+												<span class="uploadtime"><i class="fa fa-calendar"></i></span>
+												<span class="playtimes"><i class="fa fa-heart"></i></span>
+											</div>
+										</div>
+
+
+									</div>
+								</div>
+							</section>
+
+							<section class="vid-sport">
+								<div class="row header">
+									<h2>国产自拍</h2>
+								</div>
+								<div class="row">
+									<div id="owl-demo-2" class="owl-carousel">
+										<div class="item wrap-vid" id="china-view-1">
+											<div class="zoom-container">
+												<a class="goVideoPlay" href="javascript:void(0);"
+													onclick="goVideoPlay(this)"> <span class="zoom-caption">
+														<i class="icon-play fa fa-play"></i>
+												</span> <img />
+												</a>
+											</div>
+											<h3 class="vid-name">
+												<a></a>
+											</h3>
+											<div class="info">
+												<h5>
+													By <a href="#" class="owner"></a>
+												</h5>
+												<span class="uploadtime"><i class="fa fa-calendar"></i></span>
+												<span class="playtimes"> <i class="fa fa-heart"></i></span>
+											</div>
+										</div>
+										<div class="item wrap-vid" id="china-view-2">
+											<div class="zoom-container">
+												<a class="goVideoPlay" href="javascript:void(0);"
+													onclick="goVideoPlay(this)"> <span class="zoom-caption">
+														<i class="icon-play fa fa-play"></i>
+												</span> <img />
+												</a>
+											</div>
+											<h3 class="vid-name">
+												<a></a>
+											</h3>
+											<div class="info">
+												<h5>
+													By <a href="#" class="owner"></a>
+												</h5>
+												<span class="uploadtime"><i class="fa fa-calendar"></i></span>
+												<span class="playtimes"><i class="fa fa-heart"></i></span>
+											</div>
+										</div>
+										<div class="item wrap-vid" id="china-view-3">
+											<div class="zoom-container">
+												<a class="goVideoPlay" href="javascript:void(0);"
+													onclick="goVideoPlay(this)"> <span class="zoom-caption">
+														<i class="icon-play fa fa-play"></i>
+												</span> <img />
+												</a>
+											</div>
+											<h3 class="vid-name">
+												<a></a>
+											</h3>
+											<div class="info">
+												<h5>
+													By <a href="#" class="owner"></a>
+												</h5>
+												<span class="uploadtime"><i class="fa fa-calendar"></i></span>
+												<span class="playtimes"><i class="fa fa-heart"></i></span>
+											</div>
+										</div>
+										<div class="item wrap-vid" id="china-view-4">
+											<div class="zoom-container">
+												<a class="goVideoPlay" href="javascript:void(0);"
+													onclick="goVideoPlay(this)"> <span class="zoom-caption">
+														<i class="icon-play fa fa-play"></i>
+												</span> <img />
+												</a>
+											</div>
+											<h3 class="vid-name">
+												<a></a>
+											</h3>
+											<div class="info">
+												<h5>
+													By <a href="#" class="owner"></a>
+												</h5>
+												<span class="uploadtime"><i class="fa fa-calendar"></i></span>
+												<span class="playtimes"><i class="fa fa-heart"></i></span>
+											</div>
+										</div>
+										<div class="item wrap-vid" id="china-view-5">
+											<div class="zoom-container">
+												<a class="goVideoPlay" href="javascript:void(0);"
+													onclick="goVideoPlay(this)"> <span class="zoom-caption">
+														<i class="icon-play fa fa-play"></i>
+												</span> <img />
+												</a>
+											</div>
+											<h3 class="vid-name">
+												<a></a>
+											</h3>
+											<div class="info">
+												<h5>
+													By <a href="#" class="owner"></a>
+												</h5>
+												<span><i class="fa fa-calendar"></i></span> <span
+													class="playtimes"><i class="fa fa-heart"></i></span>
+											</div>
+										</div>
+										<div class="item wrap-vid" id="china-view-6">
+											<div class="zoom-container">
+												<a class="goVideoPlay" href="javascript:void(0);"
+													onclick="goVideoPlay(this)"> <span class="zoom-caption">
+														<i class="icon-play fa fa-play"></i>
+												</span> <img />
+												</a>
+											</div>
+											<h3 class="vid-name">
+												<a></a>
+											</h3>
+											<div class="info">
+												<h5>
+													By <a href="#" class="owner"></a>
+												</h5>
+												<span class="uploadtime"><i class="fa fa-calendar"></i></span>
+												<span class="playtimes"><i class="fa fa-heart"></i></span>
+											</div>
+										</div>
+										<div class="item wrap-vid" id="china-view-7">
+											<div class="zoom-container">
+												<a class="goVideoPlay" href="javascript:void(0);"
+													onclick="goVideoPlay(this)"> <span class="zoom-caption">
+														<i class="icon-play fa fa-play"></i>
+												</span> <img />
+												</a>
+											</div>
+											<h3 class="vid-name">
+												<a></a>
+											</h3>
+											<div class="info">
+												<h5>
+													By <a href="#" class="owner"></a>
+												</h5>
+												<span class="uploadtime"><i class="fa fa-calendar"></i></span>
+												<span class="playtimes"><i class="fa fa-heart"></i></span>
+											</div>
+										</div>
+										<div class="item wrap-vid" id="china-view-8">
+											<div class="zoom-container">
+												<a class="goVideoPlay" href="javascript:void(0);"
+													onclick="goVideoPlay(this)"> <span class="zoom-caption">
+														<i class="icon-play fa fa-play"></i>
+												</span> <img />
+												</a>
+											</div>
+											<h3 class="vid-name">
+												<a></a>
+											</h3>
+											<div class="info">
+												<h5>
+													By <a href="#" class="owner"></a>
+												</h5>
+												<span class="uploadtime"><i class="fa fa-calendar"></i></span>
+												<span class="playtimes"><i class="fa fa-heart"></i></span>
+											</div>
+										</div>
+									</div>
+								</div>
+							</section>
+
+							<section class="vid-music">
+								<div class="row header">
+									<h2>欧美视频</h2>
+								</div>
+								<div class="row">
+									<div id="owl-demo-3" class="owl-carousel">
+										<div class="item wrap-vid" id="america-view-1">
+											<div class="zoom-container">
+												<a class="goVideoPlay" href="javascript:void(0);"
+													onclick="goVideoPlay(this)"> <span class="zoom-caption">
+														<i class="icon-play fa fa-play"></i>
+												</span> <img />
+												</a>
+											</div>
+											<h3 class="vid-name">
+												<a></a>
+											</h3>
+											<div class="info">
+												<h5>
+													By <a href="#" class="owner"></a>
+												</h5>
+												<span class="uploadtime"><i class="fa fa-calendar"></i></span>
+												<span class="playtimes"> <i class="fa fa-heart"></i></span>
+											</div>
+										</div>
+										<div class="item wrap-vid" id="america-view-2">
+											<div class="zoom-container">
+												<a class="goVideoPlay" href="javascript:void(0);"
+													onclick="goVideoPlay(this)"> <span class="zoom-caption">
+														<i class="icon-play fa fa-play"></i>
+												</span> <img />
+												</a>
+											</div>
+											<h3 class="vid-name">
+												<a></a>
+											</h3>
+											<div class="info">
+												<h5>
+													By <a href="#" class="owner"></a>
+												</h5>
+												<span class="uploadtime"><i class="fa fa-calendar"></i></span>
+												<span class="playtimes"><i class="fa fa-heart"></i></span>
+											</div>
+										</div>
+										<div class="item wrap-vid" id="america-view-3">
+											<div class="zoom-container">
+												<a class="goVideoPlay" href="javascript:void(0);"
+													onclick="goVideoPlay(this)"> <span class="zoom-caption">
+														<i class="icon-play fa fa-play"></i>
+												</span> <img />
+												</a>
+											</div>
+											<h3 class="vid-name">
+												<a></a>
+											</h3>
+											<div class="info">
+												<h5>
+													By <a href="#" class="owner"></a>
+												</h5>
+												<span class="uploadtime"><i class="fa fa-calendar"></i></span>
+												<span class="playtimes"><i class="fa fa-heart"></i></span>
+											</div>
+										</div>
+										<div class="item wrap-vid" id="america-view-4">
+											<div class="zoom-container">
+												<a class="goVideoPlay" href="javascript:void(0);"
+													onclick="goVideoPlay(this)"> <span class="zoom-caption">
+														<i class="icon-play fa fa-play"></i>
+												</span> <img />
+												</a>
+											</div>
+											<h3 class="vid-name">
+												<a></a>
+											</h3>
+											<div class="info">
+												<h5>
+													By <a href="#" class="owner"></a>
+												</h5>
+												<span class="uploadtime"><i class="fa fa-calendar"></i></span>
+												<span class="playtimes"><i class="fa fa-heart"></i></span>
+											</div>
+										</div>
+										<div class="item wrap-vid" id="america-view-5">
+											<div class="zoom-container">
+												<a class="goVideoPlay" href="javascript:void(0);"
+													onclick="goVideoPlay(this)"> <span class="zoom-caption">
+														<i class="icon-play fa fa-play"></i>
+												</span> <img />
+												</a>
+											</div>
+											<h3 class="vid-name">
+												<a></a>
+											</h3>
+											<div class="info">
+												<h5>
+													By <a href="#" class="owner"></a>
+												</h5>
+												<span><i class="fa fa-calendar"></i></span> <span
+													class="playtimes"><i class="fa fa-heart"></i></span>
+											</div>
+										</div>
+										<div class="item wrap-vid" id="america-view-6">
+											<div class="zoom-container">
+												<a class="goVideoPlay" href="javascript:void(0);"
+													onclick="goVideoPlay(this)"> <span class="zoom-caption">
+														<i class="icon-play fa fa-play"></i>
+												</span> <img />
+												</a>
+											</div>
+											<h3 class="vid-name">
+												<a></a>
+											</h3>
+											<div class="info">
+												<h5>
+													By <a href="#" class="owner"></a>
+												</h5>
+												<span class="uploadtime"><i class="fa fa-calendar"></i></span>
+												<span class="playtimes"><i class="fa fa-heart"></i></span>
+											</div>
+										</div>
+										<div class="item wrap-vid" id="america-view-7">
+											<div class="zoom-container">
+												<a class="goVideoPlay" href="javascript:void(0);"
+													onclick="goVideoPlay(this)"> <span class="zoom-caption">
+														<i class="icon-play fa fa-play"></i>
+												</span> <img />
+												</a>
+											</div>
+											<h3 class="vid-name">
+												<a></a>
+											</h3>
+											<div class="info">
+												<h5>
+													By <a href="#" class="owner"></a>
+												</h5>
+												<span class="uploadtime"><i class="fa fa-calendar"></i></span>
+												<span class="playtimes"><i class="fa fa-heart"></i></span>
+											</div>
+										</div>
+										<div class="item wrap-vid" id="america-view-8">
+											<div class="zoom-container">
+												<a class="goVideoPlay" href="javascript:void(0);"
+													onclick="goVideoPlay(this)"> <span class="zoom-caption">
+														<i class="icon-play fa fa-play"></i>
+												</span> <img />
+												</a>
+											</div>
+											<h3 class="vid-name">
+												<a></a>
+											</h3>
+											<div class="info">
+												<h5>
+													By <a href="#" class="owner"></a>
+												</h5>
+												<span class="uploadtime"><i class="fa fa-calendar"></i></span>
+												<span class="playtimes"><i class="fa fa-heart"></i></span>
+											</div>
+										</div>
+									</div>
+								</div>
+							</section>
+						</div>
+					</div>
+				</div>
+			</div>
+		</section>
+
+		<!--////////////////////////////////////Footer-->
+		<footer>
+			<div class="zerogrid wrap-footer"></div>
+		</footer>
+
+		<!-- Slider -->
+
+		<script src="../js/demo.js"></script>
+		<script src="../js/util.js"></script>
+		<script src="../js/classie.js"></script>
+		<script src="../js/owl.carousel.js"></script>
+
+		<link rel="stylesheet" href="../css/bootstrap.min.css" />
+		<script
+			src="https://cdn.bootcss.com/popper.js/1.12.9/umd/popper.min.js"></script>
+		<script
+			src="https://cdn.bootcss.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+		<!-- 	<script src="js/jquery-2.1.1.js"></script>
+	<script src="js/demo.js"></script>
+	<script src="js/classie.js"></script>
+	Carousel
+	<script src="js/owl.carousel.js"></script> -->
+		<script>
+			$(document).ready(function() {
+
+				$("#owl-demo-1").owlCarousel({
+					items : 4,
+					lazyLoad : true,
+					navigation : true
+				});
+				$("#owl-demo-2").owlCarousel({
+					items : 4,
+					lazyLoad : true,
+					navigation : true
+				});
+				$("#owl-demo-3").owlCarousel({
+					items : 4,
+					lazyLoad : true,
+					navigation : true
+				});
+			});
+
+			window.onload = function() {
+
+			}
+		</script>
+	</div>
+	
+<script type="text/javascript">var cnzz_protocol = (("https:" == document.location.protocol) ? " https://" : " http://");document.write(unescape("%3Cspan id='cnzz_stat_icon_1274363830'%3E%3C/span%3E%3Cscript src='" + cnzz_protocol + "s13.cnzz.com/z_stat.php%3Fid%3D1274363830' type='text/javascript'%3E%3C/script%3E"));</script>
+</body>
+</html>
