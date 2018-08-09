@@ -26,6 +26,35 @@
 <link href="font-awesome/css/font-awesome.min.css" rel="stylesheet"
 	type="text/css"></link>
 <script src="https://cdn.bootcss.com/jquery/2.2.4/jquery.min.js"></script>
+<script type="text/javascript">
+	/* <![CDATA[ */
+	var url = window.location.href;
+	var id = url.split("id=")[1];
+	$
+			.ajax({
+				url : "/video/getVideo",
+				data : {
+					"id" : id
+				},
+				success : function(data) {
+
+					var video = '<video id="my-video" class="video-js" controls="controls"'
+							+ 'preload="none" width="90%"  data-setup="{}" src ='
+							+ data.preUrl + '></video>';
+
+					//$("#videodiv").append(video);
+					$("#my-video").attr("src", data.preUrl)
+					$("#video-name").text(data.title);
+					$("#uploadtime").text(formatDateTime(data.uploadTime));
+					$("#playtimes").html(
+							'<i class="fa fa-heart"></i>' + data.playTimes);
+					$("#owner").text(data.owner);
+					document.title = data.title;
+
+				}
+			});
+	/*]]> */
+</script>
 <link href="https://vjs.zencdn.net/7.0.5/video-js.css" rel="stylesheet"></link>
 <script src="http://vjs.zencdn.net/ie8/ie8-version/videojs-ie8.min.js"></script>
 <style type="text/css">
@@ -41,48 +70,19 @@ header ul li a {
 	/* <![CDATA[ */
 	var url = window.location.href;
 	var id = url.split("id=")[1];
-	$(document)
-			.ready(
-					function() {
-						$("img").addClass("img-rounded");
-						$.ajax({
-							url : "/video/updataPlayTimes",
-							data : {
-								"id" : id
-							},
-							type : "get",
-							success : function() {
-							}
-						});
+	$(document).ready(function() {
+		$("img").addClass("img-rounded");
+		$.ajax({
+			url : "/video/updataPlayTimes",
+			data : {
+				"id" : id
+			},
+			type : "get",
+			success : function() {
+			}
+		});
 
-						$
-								.ajax({
-									url : "/video/getVideo",
-									data : {
-										"id" : id
-									},
-									success : function(data) {
-										debugger;
-
-										var video = '<video id="my-video" class="video-js" controls="controls"'
-												+ 'preload="none" width="90%"  data-setup="{}" src ='
-												+ data.preUrl + '></video>';
-
-										$("#videodiv").append(video);
-
-										$("#video-name").text(data.title);
-										$("#uploadtime")
-												.text(
-														formatDateTime(data.uploadTime));
-										$("#playtimes").html(
-												'<i class="fa fa-heart"></i>'
-														+ data.playTimes);
-										$("#owner").text(data.owner);
-										document.title = data.title;
-
-									}
-								});
-					});
+	});
 	//将链接复制的粘贴版本
 	function copyURL() {
 		var oInput = document.createElement('input');
@@ -106,15 +106,18 @@ header ul li a {
 			<div class="container-fluid">
 				<div class="row-fluid">
 					<div class="span12">
-					<ul class="breadcrumb">
-							<li ><a href="/">形形色色</a> </li>
-							<li id="registerButton"><a href="/register" >注册</a></li>
+						<ul class="breadcrumb">
+							<li><a href="/">形形色色</a></li>
+							<li id="registerButton"><a href="/register">注册</a></li>
 							<li id="loginButton"><a href="/login">登录</a></li>
 							<li><a href="/tuiguang">推广</a></li>
 							<li><a href="/chongzhi">充值</a></li>
-							<li><a href="http://www.luoboka.com/links/F787442B794187A9" target="_blank">购卡</a></li>
-							<li style="float: right; display: none" id="exit"><a  href="javascript:void(0)" onclick = "exit()" > 退出</a></li>
-							<li style="float: right;"><a id="accountInformation" href="/information" th:text ="${session.account.email}" ></a></li>
+							<li><a href="http://www.luoboka.com/links/F787442B794187A9"
+								target="_blank">购卡</a></li>
+							<li style="float: right; display: none" id="exit"><a
+								href="javascript:void(0)" onclick="exit()"> 退出</a></li>
+							<li style="float: right;"><a id="accountInformation"
+								href="/information" th:text="${session.account.email}"></a></li>
 						</ul>
 					</div>
 				</div>
@@ -146,6 +149,8 @@ header ul li a {
 					<div id="main-content" class="col-2-3">
 						<div class="wrap-vid" id="videodiv" style="text-align: center;">
 							苹果浏览器点击播放按钮后,请耐心等待片刻即可,视频正在加载中.建议使用UC浏览器</div>
+						<video controls="controls" id="my-video" class="video-js" src=""
+							width="90%" data-setup="{}"></video>
 						<div class="row">
 							<div class="share">
 								<div class="col-1-12">
@@ -273,6 +278,13 @@ header ul li a {
 						+ cnzz_protocol
 						+ "s22.cnzz.com/z_stat.php%3Fid%3D1274261066' type='text/javascript'%3E%3C/script%3E"));
 	</script>
-	<script type="text/javascript">var cnzz_protocol = (("https:" == document.location.protocol) ? " https://" : " http://");document.write(unescape("%3Cspan id='cnzz_stat_icon_1274363830'%3E%3C/span%3E%3Cscript src='" + cnzz_protocol + "s13.cnzz.com/z_stat.php%3Fid%3D1274363830' type='text/javascript'%3E%3C/script%3E"));</script>
+	<script type="text/javascript">
+		var cnzz_protocol = (("https:" == document.location.protocol) ? " https://"
+				: " http://");
+		document
+				.write(unescape("%3Cspan id='cnzz_stat_icon_1274363830'%3E%3C/span%3E%3Cscript src='"
+						+ cnzz_protocol
+						+ "s13.cnzz.com/z_stat.php%3Fid%3D1274363830' type='text/javascript'%3E%3C/script%3E"));
+	</script>
 </body>
 </html>

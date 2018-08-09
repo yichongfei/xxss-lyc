@@ -224,6 +224,23 @@ public class HomeController {
 		video.setPreUrl(preSignedURL);
 		return video;
 	}
+	
+	/**
+	 * 获取要播放的PRE-URL
+	 * 
+	 * @param id
+	 * @return
+	 */
+	@RequestMapping("/video/getPre")
+	@ResponseBody
+	public String getVideoPreUrl(String id) {
+		Video video = videoService.findById(id);
+		String preSignedURL = AmazonS3Object.getPreSignedURL(S3Config.VIDEOBUCKET, video.getMp4Key());
+		return preSignedURL;
+	}
+
+	
+	
 
 	@RequestMapping("/video/updataPlayTimes")
 	@ResponseBody
