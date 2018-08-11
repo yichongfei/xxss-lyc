@@ -44,18 +44,35 @@ header ul li a {
 	$(document).ready(
 			function() {
 				//获取最新的视频图片
+				
 				$.ajax({
 					url : "/video/getNewVideoPic",
 					success : function(data) {
 						for (var i = 1; i < data.length + 1; i++) {
-							$("#most-new-" + i).attr("src",
+							$("#new-view-" + i + " img").attr("src",
 									baseS3URL + data[i - 1].picKey);
-							$("#most-new-" + i).parent().attr("data-id",
+							$("#new-view-" + i + " img").attr("height",picHeight+"px");
+							$("#new-view-" + i + " a").attr("data-id",
 									data[i - 1].id);
+							$("#new-view-" + i + " .vid-name").attr("alt",
+									data[i - 1].title);
+							$("#new-view-" + i + " .owner").text(
+									data[i - 1].owner);
+							$("#new-view-" + i + " .uploadtime").text(
+									formatDateTime(data[i - 1].uploadTime));
+							$("#new-view-" + i + " .vid-name").text(
+									data[i - 1].title);
+							$("#new-view-" + i + " .playtimes").html(
+									'<i class="fa fa-heart"></i>'
+											+ data[i - 1].playTimes);
 						}
-						picHeight=$("most-new-2").height();
 					}
 				});
+				
+				
+				
+				
+				
 				$.ajax({
 					url : "/video/getMostViewedPic",
 					success : function(data) {
@@ -196,9 +213,181 @@ header ul li a {
 				<div class="row">
 					<div id="main-content" class="col-4-4">
 						<div class="wrap-content">
+						
 							<section class="vid-tv">
 								<div class="row header">
-									<h2>最多播放</h2>
+									<a href="/listNewVideo/0"><h2>最新视频</h2></a>
+								</div>
+								<div class="row">
+									<div id="owl-demo-4" class="owl-carousel">
+										<div class="item wrap-vid" id="new-view-1">
+											<div class="zoom-container">
+												<a class="goVideoPlay" href="javascript:void(0);"
+													onclick="goVideoPlay(this)"> <span class="zoom-caption">
+														<i class="icon-play fa fa-play"></i>
+												</span> <img />
+												</a>
+											</div>
+											<h3 class="vid-name">
+												<a></a>
+											</h3>
+											<div class="info">
+												<h5>
+													By <a href="#" class="owner"></a>
+												</h5>
+												<span class="uploadtime"><i class="fa fa-calendar"></i></span>
+												<span class="playtimes"> <i class="fa fa-heart"></i></span>
+											</div>
+										</div>
+										<div class="item wrap-vid" id="new-view-2">
+											<div class="zoom-container">
+												<a class="goVideoPlay" href="javascript:void(0);"
+													onclick="goVideoPlay(this)"> <span class="zoom-caption">
+														<i class="icon-play fa fa-play"></i>
+												</span> <img />
+												</a>
+											</div>
+											<h3 class="vid-name">
+												<a></a>
+											</h3>
+											<div class="info">
+												<h5>
+													By <a href="#" class="owner"></a>
+												</h5>
+												<span class="uploadtime"><i class="fa fa-calendar"></i></span>
+												<span class="playtimes"><i class="fa fa-heart"></i></span>
+											</div>
+										</div>
+										<div class="item wrap-vid" id="new-view-3">
+											<div class="zoom-container">
+												<a class="goVideoPlay" href="javascript:void(0);"
+													onclick="goVideoPlay(this)"> <span class="zoom-caption">
+														<i class="icon-play fa fa-play"></i>
+												</span> <img />
+												</a>
+											</div>
+											<h3 class="vid-name">
+												<a></a>
+											</h3>
+											<div class="info">
+												<h5>
+													By <a href="#" class="owner"></a>
+												</h5>
+												<span class="uploadtime"><i class="fa fa-calendar"></i></span>
+												<span class="playtimes"><i class="fa fa-heart"></i></span>
+											</div>
+										</div>
+										<div class="item wrap-vid" id="new-view-4">
+											<div class="zoom-container">
+												<a class="goVideoPlay" href="javascript:void(0);"
+													onclick="goVideoPlay(this)"> <span class="zoom-caption">
+														<i class="icon-play fa fa-play"></i>
+												</span> <img />
+												</a>
+											</div>
+											<h3 class="vid-name">
+												<a></a>
+											</h3>
+											<div class="info">
+												<h5>
+													By <a href="#" class="owner"></a>
+												</h5>
+												<span class="uploadtime"><i class="fa fa-calendar"></i></span>
+												<span class="playtimes"><i class="fa fa-heart"></i></span>
+											</div>
+										</div>
+										<div class="item wrap-vid" id="new-view-5">
+											<div class="zoom-container">
+												<a class="goVideoPlay" href="javascript:void(0);"
+													onclick="goVideoPlay(this)"> <span class="zoom-caption">
+														<i class="icon-play fa fa-play"></i>
+												</span> <img />
+												</a>
+											</div>
+											<h3 class="vid-name">
+												<a></a>
+											</h3>
+											<div class="info">
+												<h5>
+													By <a href="#" class="owner"></a>
+												</h5>
+												<span><i class="fa fa-calendar"></i></span> <span
+													class="playtimes"><i class="fa fa-heart"></i></span>
+											</div>
+										</div>
+										<div class="item wrap-vid" id="new-view-6">
+											<div class="zoom-container">
+												<a class="goVideoPlay" href="javascript:void(0);"
+													onclick="goVideoPlay(this)"> <span class="zoom-caption">
+														<i class="icon-play fa fa-play"></i>
+												</span> <img />
+												</a>
+											</div>
+											<h3 class="vid-name">
+												<a></a>
+											</h3>
+											<div class="info">
+												<h5>
+													By <a href="#" class="owner"></a>
+												</h5>
+												<span class="uploadtime"><i class="fa fa-calendar"></i></span>
+												<span class="playtimes"><i class="fa fa-heart"></i></span>
+											</div>
+										</div>
+										<div class="item wrap-vid" id="new-view-7">
+											<div class="zoom-container">
+												<a class="goVideoPlay" href="javascript:void(0);"
+													onclick="goVideoPlay(this)"> <span class="zoom-caption">
+														<i class="icon-play fa fa-play"></i>
+												</span> <img />
+												</a>
+											</div>
+											<h3 class="vid-name">
+												<a></a>
+											</h3>
+											<div class="info">
+												<h5>
+													By <a href="#" class="owner"></a>
+												</h5>
+												<span class="uploadtime"><i class="fa fa-calendar"></i></span>
+												<span class="playtimes"><i class="fa fa-heart"></i></span>
+											</div>
+										</div>
+										<div class="item wrap-vid" id="new-view-8">
+											<div class="zoom-container">
+												<a class="goVideoPlay" href="javascript:void(0);"
+													onclick="goVideoPlay(this)"> <span class="zoom-caption">
+														<i class="icon-play fa fa-play"></i>
+												</span> <img />
+												</a>
+											</div>
+											<h3 class="vid-name">
+												<a></a>
+											</h3>
+											<div class="info">
+												<h5>
+													By <a href="#" class="owner"></a>
+												</h5>
+												<span class="uploadtime"><i class="fa fa-calendar"></i></span>
+												<span class="playtimes"><i class="fa fa-heart"></i></span>
+											</div>
+										</div>
+
+
+									</div>
+								</div>
+							</section>
+						
+						
+						
+						
+						
+						
+						
+						
+							<section class="vid-tv">
+								<div class="row header">
+									<a href="/listHotVideo/0"><h2>最多播放</h2></a>
 								</div>
 								<div class="row">
 									<div id="owl-demo-1" class="owl-carousel">
@@ -362,7 +551,7 @@ header ul li a {
 
 							<section class="vid-sport">
 								<div class="row header">
-									<h2>国产自拍</h2>
+									<a href="/listVideo/china/0"><h2>国产自拍</h2></a>
 								</div>
 								<div class="row">
 									<div id="owl-demo-2" class="owl-carousel">
@@ -524,7 +713,7 @@ header ul li a {
 
 							<section class="vid-music">
 								<div class="row header">
-									<h2>欧美视频</h2>
+									<a href="/listVideo/america/0"><h2>欧美视频</h2></a>
 								</div>
 								<div class="row">
 									<div id="owl-demo-3" class="owl-carousel">
@@ -725,6 +914,11 @@ header ul li a {
 					navigation : true
 				});
 				$("#owl-demo-3").owlCarousel({
+					items : 4,
+					lazyLoad : true,
+					navigation : true
+				});
+				$("#owl-demo-4").owlCarousel({
 					items : 4,
 					lazyLoad : true,
 					navigation : true

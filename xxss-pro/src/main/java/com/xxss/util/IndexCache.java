@@ -27,8 +27,8 @@ public class IndexCache {
 	
 	
 	public  void updateCache() {
-		Sort sort = new Sort(Direction.ASC, "uploadTime");
-		int page = 0, size = 5;
+		Sort sort = new Sort(Direction.DESC, "uploadTime");
+		int page = 0, size = 8;
 		Pageable pageable = new PageRequest(page, size, sort);
 		newVideoPicList=videoService.findAll(pageable).getContent();
 		
@@ -48,6 +48,11 @@ public class IndexCache {
 		page = 0;size = 8;
 		pageable = new PageRequest(page, size, sort);
 		AmericaViewPicList = videoService.findBycategory(pageable, "america");
+		
+		
+		
+		
+		
 	}
 	
 	

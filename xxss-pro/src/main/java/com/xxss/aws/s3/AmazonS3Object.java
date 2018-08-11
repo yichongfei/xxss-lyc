@@ -114,7 +114,7 @@ public class AmazonS3Object {
 		// Set the presigned URL to expire after one hour.
 		java.util.Date expiration = new java.util.Date();
 		long expTimeMillis = expiration.getTime();
-		expTimeMillis += 1000 * 60 * 60;
+		expTimeMillis += 1000 * 60 * 5;
 		expiration.setTime(expTimeMillis);
 
 		// Generate the presigned URL.

@@ -78,7 +78,7 @@ public class HomeController {
 
 		}
 
-		Sort sort = new Sort(Direction.ASC, "uploadTime");
+		Sort sort = new Sort(Direction.DESC, "uploadTime");
 		int page = 0, size = 5;
 		Pageable pageable = new PageRequest(page, size, sort);
 		List<Video> list = videoService.findAll(pageable).getContent();
