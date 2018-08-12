@@ -84,7 +84,7 @@ public class Account {
 		if (this.vipDeadline < System.currentTimeMillis()) {
 			this.vipDeadline = System.currentTimeMillis() + card.getMonthsMillisecond();
 		}else {
-			this.vipDeadline += this.vipDeadline + card.getMonthsMillisecond();
+			this.vipDeadline = this.vipDeadline + card.getMonthsMillisecond();
 		}
 		this.vip = true;
 	}

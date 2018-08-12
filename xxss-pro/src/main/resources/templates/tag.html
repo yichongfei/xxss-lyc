@@ -8,7 +8,8 @@
 <title>形形色色</title>
 <!-- Mobile Specific Metas
   ================================================== -->
-<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"></meta>
+<meta name="viewport"
+	content="width=device-width, initial-scale=1, maximum-scale=1"></meta>
 
 <!-- CSS
   ================================================== -->
@@ -26,56 +27,60 @@
 header ul li a {
 	color: #f18a07;
 }
+
 body {
-    margin: 0;
-    padding: 7px 0 0;
-    font-size: 14px;
-    font-family: Arial, Helvetica, sans-serif;
-    position: relative;
+	margin: 0;
+	padding: 7px 0 0;
+	font-size: 14px;
+	font-family: Arial, Helvetica, sans-serif;
+	position: relative;
 }
+
 .con {
-    float: left;
-    width: 200px;
-    margin: 0 20px 5px 10px;
-    _overflow: hidden;
-    _height: 66px;
-    padding: 15px 0 16px 10px;
-    height: 66px;
-    border-bottom: 1px solid #f3f3f3;
+	float: left;
+	width: 200px;
+	margin: 0 20px 5px 10px;
+	_overflow: hidden;
+	_height: 66px;
+	padding: 15px 0 16px 10px;
+	height: 66px;
+	border-bottom: 1px solid #f3f3f3;
 }
+
 .con a {
-    margin-bottom: 4px;
-    display: inline-block;
-    font-family: arial "MicroSoft YaHei";
-    font-weight: bold;
-    color: #014cd2;
-    text-decoration: none;
+	margin-bottom: 4px;
+	display: inline-block;
+	font-family: arial "MicroSoft YaHei";
+	font-weight: bold;
+	color: #014cd2;
+	text-decoration: none;
 }
 
 a:link {
-    color: #0000cc;
-}
-.con span {
-    font-family: arial,"Sim Sun";
-    font-size: 12px;
-    color: #666;
-    height: 15px;
-    overflow: hidden;
-    text-overflow: ellipsis;
-    white-space: nowrap;
-    width: 100%;
-    margin-top: 4px;
-}
-.abg {
-    width: 24px;
-    height: 24px;
-    display: block;
-    float: left;
-    margin-right: 8px;
-    overflow: hidden;
-    background: url(images/tag.png) no-repeat left top;
+	color: #0000cc;
 }
 
+.con span {
+	font-family: arial, "Sim Sun";
+	font-size: 12px;
+	color: #666;
+	height: 15px;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	white-space: nowrap;
+	width: 100%;
+	margin-top: 4px;
+}
+
+.abg {
+	width: 24px;
+	height: 24px;
+	display: block;
+	float: left;
+	margin-right: 8px;
+	overflow: hidden;
+	background: url(images/tag.png) no-repeat left top;
+}
 </style>
 
 </head>
@@ -86,13 +91,16 @@ a:link {
 				<div class="row-fluid">
 					<div class="span12">
 						<ul class="breadcrumb">
-							<li ><a href="/">形形色色</a> </li>
-							<li id="registerButton"><a href="/register" >注册</a></li>
+							<li><a href="/">形形色色</a></li>
+							<li id="registerButton"><a href="/register">注册</a></li>
 							<li id="loginButton"><a href="/login">登录</a></li>
 							<li><a href="/chongzhi">充值</a></li>
-							<li><a href="http://www.luoboka.com/links/F787442B794187A9" target="_blank">购卡</a></li>
-							<li style="float: right; display: none" id="exit"><a  href="javascript:void(0)" onclick = "exit()" > 退出</a></li>
-							<li style="float: right;"><a id="accountInformation" href="/information" th:text ="${session.account.email}" ></a></li>
+							<li><a href="http://www.luoboka.com/links/F787442B794187A9"
+								target="_blank">购卡</a></li>
+							<li style="float: right; display: none" id="exit"><a
+								href="javascript:void(0)" onclick="exit()"> 退出</a></li>
+							<li style="float: right;"><a id="accountInformation"
+								href="/information" th:text="${session.account.email}"></a></li>
 						</ul>
 					</div>
 				</div>
@@ -125,92 +133,112 @@ a:link {
 						<div class="wrap-vid">
 							<div class="con">
 								<div>
-									<a href="/listVideo/china/0" class="abg yingxiao_center" target="_blank"></a>
+									<a href="/listVideo/lushaonv/0" class="abg yingxiao_center"
+										target="_blank"></a>
 								</div>
 								<div>
-									<a href="/listVideo/china/0" target="_blank">国产</a>
-									<br/><span>经典国人自拍,网红,偷拍,91porn经典视频</span>
-								</div>
-							</div>
-							<div class="con">
-								<div>
-									<a href="/listVideo/japan/0" class="abg yingxiao_center" target="_blank"></a>
-								</div>
-								<div>
-									<a href="/listVideo/japan/0" target="_blank">日本</a>
-									<br/><span>来自东瀛小国的视频</span>
+									<a href="/listVideo/lushaonv/0" target="_blank">网红鹿少女</a> <br />
+									<span>网红鹿少女全集</span>
 								</div>
 							</div>
 							<div class="con">
 								<div>
-									<a href="/listVideo/america/0" class="abg yingxiao_center" target="_blank"></a>
+									<a href="/listVideo/china/0" class="abg yingxiao_center"
+										target="_blank"></a>
 								</div>
 								<div>
-									<a href="/listVideo/america/0" target="_blank">欧美</a>
-									<br/><span>欧美各种知名女优,激情四射</span>
-								</div>
-							</div>
-							<div class="con">
-								<div>
-									<a href="/listVideo/dongman/0" class="abg yingxiao_center" target="_blank"></a>
-								</div>
-								<div>
-									<a href="/listVideo/dongman/0" target="_blank">动漫</a>
-									<br/><span>动画作品,适合二次元口味的你</span>
+									<a href="/listVideo/china/0" target="_blank">国产</a> <br />
+									<span>经典国人自拍,网红,偷拍,91porn经典视频</span>
 								</div>
 							</div>
 							<div class="con">
 								<div>
-									<a href="/listVideo/pornhub-asia/0" class="abg yingxiao_center" target="_blank"></a>
+									<a href="/listVideo/japan/0" class="abg yingxiao_center"
+										target="_blank"></a>
 								</div>
 								<div>
-									<a href="/listVideo/pornhub-asia/0" target="_blank">欧亚风情</a>
-									<br/><span>视频多为欧亚自拍视频</span>
-								</div>
-							</div>
-							<div class="con">
-								<div>
-									<a href="/listVideo/yanshe/0" class="abg yingxiao_center" target="_blank"></a>
-								</div>
-								<div>
-									<a href="/listVideo/yanshe/0" target="_blank">颜射</a>
-									<br/><span>就是要射在脸上</span>
+									<a href="/listVideo/japan/0" target="_blank">日本</a> <br />
+									<span>来自东瀛小国的视频</span>
 								</div>
 							</div>
 							<div class="con">
 								<div>
-									<a href="/listVideo/gangjiao/0" class="abg yingxiao_center" target="_blank"></a>
+									<a href="/listVideo/america/0" class="abg yingxiao_center"
+										target="_blank"></a>
 								</div>
 								<div>
-									<a href="/listVideo/gangjiao/0" target="_blank">肛交</a>
-									<br/><span>爆菊花 ^_^</span>
-								</div>
-							</div>
-							<div class="con">
-								<div>
-									<a href="/listVideo/qunjiao/0" class="abg yingxiao_center" target="_blank"></a>
-								</div>
-								<div>
-									<a href="/listVideo/qunjiao/0" target="_blank">群交</a>
-									<br/><span>人多就是好玩~(*^▽^*)</span>
+									<a href="/listVideo/america/0" target="_blank">欧美</a> <br />
+									<span>欧美各种知名女优,激情四射</span>
 								</div>
 							</div>
 							<div class="con">
 								<div>
-									<a href="/listVideo/mote/0" class="abg yingxiao_center" target="_blank"></a>
+									<a href="/listVideo/dongman/0" class="abg yingxiao_center"
+										target="_blank"></a>
 								</div>
 								<div>
-									<a href="/listVideo/mote/0" target="_blank">模特</a>
-									<br/><span>真实模特,热辣身材</span>
+									<a href="/listVideo/dongman/0" target="_blank">动漫</a> <br />
+									<span>动画作品,适合二次元口味的你</span>
 								</div>
 							</div>
 							<div class="con">
 								<div>
-									<a href="/listVideo/nenmo/0" class="abg yingxiao_center" target="_blank"></a>
+									<a href="/listVideo/pornhub-asia/0" class="abg yingxiao_center"
+										target="_blank"></a>
 								</div>
 								<div>
-									<a href="/listVideo/nenmo/0" target="_blank">嫩模</a>
-									<br/><span>一个字,就是嫩</span>
+									<a href="/listVideo/pornhub-asia/0" target="_blank">欧亚风情</a> <br />
+									<span>视频多为欧亚自拍视频</span>
+								</div>
+							</div>
+							<div class="con">
+								<div>
+									<a href="/listVideo/yanshe/0" class="abg yingxiao_center"
+										target="_blank"></a>
+								</div>
+								<div>
+									<a href="/listVideo/yanshe/0" target="_blank">颜射</a> <br />
+									<span>就是要射在脸上</span>
+								</div>
+							</div>
+							<div class="con">
+								<div>
+									<a href="/listVideo/gangjiao/0" class="abg yingxiao_center"
+										target="_blank"></a>
+								</div>
+								<div>
+									<a href="/listVideo/gangjiao/0" target="_blank">肛交</a> <br />
+									<span>爆菊花 ^_^</span>
+								</div>
+							</div>
+							<div class="con">
+								<div>
+									<a href="/listVideo/qunjiao/0" class="abg yingxiao_center"
+										target="_blank"></a>
+								</div>
+								<div>
+									<a href="/listVideo/qunjiao/0" target="_blank">群交</a> <br />
+									<span>人多就是好玩~(*^▽^*)</span>
+								</div>
+							</div>
+							<div class="con">
+								<div>
+									<a href="/listVideo/mote/0" class="abg yingxiao_center"
+										target="_blank"></a>
+								</div>
+								<div>
+									<a href="/listVideo/mote/0" target="_blank">模特</a> <br />
+									<span>真实模特,热辣身材</span>
+								</div>
+							</div>
+							<div class="con">
+								<div>
+									<a href="/listVideo/nenmo/0" class="abg yingxiao_center"
+										target="_blank"></a>
+								</div>
+								<div>
+									<a href="/listVideo/nenmo/0" target="_blank">嫩模</a> <br />
+									<span>一个字,就是嫩</span>
 								</div>
 							</div>
 						</div>
@@ -306,7 +334,21 @@ a:link {
 			});
 		</script>
 	</div>
-	<script type="text/javascript">var cnzz_protocol = (("https:" == document.location.protocol) ? " https://" : " http://");document.write(unescape("%3Cspan id='cnzz_stat_icon_1274363830'%3E%3C/span%3E%3Cscript src='" + cnzz_protocol + "s13.cnzz.com/z_stat.php%3Fid%3D1274363830' type='text/javascript'%3E%3C/script%3E"));</script>
-	<script type="text/javascript">var cnzz_protocol = (("https:" == document.location.protocol) ? " https://" : " http://");document.write(unescape("%3Cspan id='cnzz_stat_icon_1274363830'%3E%3C/span%3E%3Cscript src='" + cnzz_protocol + "s13.cnzz.com/z_stat.php%3Fid%3D1274363830%26online%3D1%26show%3Dline' type='text/javascript'%3E%3C/script%3E"));</script>
+	<script type="text/javascript">
+		var cnzz_protocol = (("https:" == document.location.protocol) ? " https://"
+				: " http://");
+		document
+				.write(unescape("%3Cspan id='cnzz_stat_icon_1274363830'%3E%3C/span%3E%3Cscript src='"
+						+ cnzz_protocol
+						+ "s13.cnzz.com/z_stat.php%3Fid%3D1274363830' type='text/javascript'%3E%3C/script%3E"));
+	</script>
+	<script type="text/javascript">
+		var cnzz_protocol = (("https:" == document.location.protocol) ? " https://"
+				: " http://");
+		document
+				.write(unescape("%3Cspan id='cnzz_stat_icon_1274363830'%3E%3C/span%3E%3Cscript src='"
+						+ cnzz_protocol
+						+ "s13.cnzz.com/z_stat.php%3Fid%3D1274363830%26online%3D1%26show%3Dline' type='text/javascript'%3E%3C/script%3E"));
+	</script>
 </body>
 </html>
