@@ -14,5 +14,5 @@ public class S3Config {
 	public static final String[] KINDS = {"america/","japan/","china/","pornhub-asia/","dongman/",
 			"yanshe/","gangjiao/","qunjiao/","boduoyejieyi/","cangjingkong/","taoguhuilixiang/","AmeriIchinose/",
 			"LanaRHoades/","MiaKhalifa/","RileyReid/","Mia Malkova/","Brandi Love/","Adriana Chechik/","Nicole Aniston/",
-			"Lena Paul/","Lisa Ann/","mote/","nenmo/","Alexis Texas/","angelica/","belle knox/","lushaonv/"};
+			"Lena Paul/","Lisa Ann/","mote/","nenmo/","Alexis Texas/","anjelica/","belle knox/","lushaonv/"};
 }

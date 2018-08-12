@@ -246,8 +246,10 @@ public class HomeController {
 	@ResponseBody
 	public void updataPlayTimes(String id) {
 		Video video = videoService.findById(id);
-		video.updateIncreasePlayTimes();
-		videoService.saveAndFlush(video);
+		if(video !=null) {
+			video.updateIncreasePlayTimes();
+			videoService.saveAndFlush(video);
+		}
 	}
 
 	@RequestMapping("/listVideo/{category}/{page}")
