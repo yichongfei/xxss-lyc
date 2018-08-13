@@ -158,7 +158,7 @@ public class AmazonS3Object {
 		List<String> list = getPrefix(time);
 		for (String prefix : list) {
 			List<S3ObjectSummary> listObjectPrefix = ListObjectPrefix(S3Config.VIDEOBUCKET, prefix);
-
+			System.out.println(prefix);
 			List<S3ObjectSummary> mp4VideoS3Object = getMp4VideoS3Object(listObjectPrefix);
 
 			for (S3ObjectSummary s3ObjectSummary : mp4VideoS3Object) {
