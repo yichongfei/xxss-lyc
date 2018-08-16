@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+<!-- Basic Page Needs
+  ================================================== -->
+<meta charset="utf-8"></meta>
+<title>形形色色华人社区</title>
+<meta name="description" content="中国成人视频网站,自拍视频网站"></meta>
+<meta name="author" content="www.xxss2018.com"></meta>
+
+<!-- Mobile Specific Metas
+  ================================================== -->
+<meta name="viewport"
+	content="width=device-width, initial-scale=1, maximum-scale=1"></meta>
+
+<!-- CSS
+  ================================================== -->
+<script src="https://cdn.bootcss.com/jquery/2.2.4/jquery.min.js"></script>
+
+<script type="text/javascript">
+	/* <![CDATA[ */
+	var url = window.location.href;
+	var id = url.split("id=")[1];
+	$.ajax({
+		url : "/video/getVideo",
+		data : {
+			"id" : id
+		},
+		success : function(data) {
+			$("#my-video").attr("src", data.preUrl)
+
+		}
+	});
+	/*]]> */
+</script>
+<link href="https://vjs.zencdn.net/7.0.5/video-js.css" rel="stylesheet"></link>
+
+<script type="text/javascript">
+	/* <![CDATA[ */
+	var url = window.location.href;
+	var id = url.split("id=")[1];
+	$(document).ready(function() {
+		$("img").addClass("img-rounded");
+		$.ajax({
+			url : "/video/updataPlayTimes",
+			data : {
+				"id" : id
+			},
+			type : "get",
+			success : function() {
+			}
+		});
+
+	});
+
+	/*]]> */
+</script>
+
+
+</head>
+<body id="wrapper">
+	<div class="wrap-body">
+
+		<section id="container" class="index-page">
+			<div class="wrap-container zerogrid">
+				<div class="row">
+					<div id="main-content" class="col-2-3">
+						<video controls="controls" id="my-video" class="video-js" src=""
+							height="480px" width="600px"  data-setup="{}"></video>
+					</div>
+				</div>
+			</div>
+		</section>
+
+
+	</div>
+	<script type="text/javascript">
+		var cnzz_protocol = (("https:" == document.location.protocol) ? " https://"
+				: " http://");
+		document
+				.write(unescape("%3Cspan id='cnzz_stat_icon_1274363830'%3E%3C/span%3E%3Cscript src='"
+						+ cnzz_protocol
+						+ "s13.cnzz.com/z_stat.php%3Fid%3D1274363830' type='text/javascript'%3E%3C/script%3E"));
+	</script>
+</body>
+
+</html>

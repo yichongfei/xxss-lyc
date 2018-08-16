@@ -178,7 +178,7 @@ public class AmazonS3Object {
 	public static List<S3ObjectSummary> getMp4VideoS3Object(List<S3ObjectSummary> list) {
 		List<S3ObjectSummary> mp4List = new ArrayList<S3ObjectSummary>();
 		for (S3ObjectSummary s3ObjectSummary : list) {
-			if (s3ObjectSummary.getKey().endsWith("mp4")) {
+			if (s3ObjectSummary.getKey().endsWith("mp4")||s3ObjectSummary.getKey().endsWith("mpg")) {
 				mp4List.add(s3ObjectSummary);
 			}
 		}

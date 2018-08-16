@@ -11,9 +11,10 @@ public class S3Config {
 	
 	public static final String OWNER = "XXSS";
 	
-	public static final String[] KINDS = {"america/","japan/","china/","pornhub-asia/","dongman/",
-			"yanshe/","gangjiao/","qunjiao/","boduoyejieyi/","cangjingkong/","taoguhuilixiang/","AmeriIchinose/",
-			"LanaRHoades/","MiaKhalifa/","RileyReid/","Mia Malkova/","Brandi Love/","Adriana Chechik/","Nicole Aniston/",
-			"Lena Paul/","Lisa Ann/","mote/","nenmo/","Alexis Texas/","anjelica/","belle knox/","lushaonv/",
-			"china-better/"};
+//	public static final String[] KINDS = {"america/","japan/","china/","pornhub-asia/","dongman/",
+//			"yanshe/","gangjiao/","qunjiao/","boduoyejieyi/","cangjingkong/","taoguhuilixiang/","AmeriIchinose/",
+//			"LanaRHoades/","MiaKhalifa/","RileyReid/","Mia Malkova/","Brandi Love/","Adriana Chechik/","Nicole Aniston/",
+//			"Lena Paul/","Lisa Ann/","mote/","nenmo/","Alexis Texas/","anjelica/","belle knox/","lushaonv/",
+//			"china-better/"};
+	public static final String[] KINDS = {"china-better/","china/"};
 }

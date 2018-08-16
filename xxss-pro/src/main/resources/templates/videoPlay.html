@@ -16,8 +16,8 @@
 
 <!-- CSS
   ================================================== -->
-  <script src="https://cdn.bootcss.com/jquery/2.2.4/jquery.min.js"></script>
-  <script src="/js/util.js"></script>
+<script src="https://cdn.bootcss.com/jquery/2.2.4/jquery.min.js"></script>
+<script src="/js/util.js"></script>
 <link rel="stylesheet" href="css/zerogrid.css"></link>
 <link rel="stylesheet" href="css/style.css"></link>
 <link rel="stylesheet" href="css/menu.css"></link>
@@ -68,6 +68,19 @@ header ul li a {
 	left: 5%;
 }
 </style>
+<style id="antiClickjack">
+body {
+	display: none !important;
+}
+</style>
+<script>
+	if (self === top) {
+		var antiClickjack = document.getElementById("antiClickjack");
+		antiClickjack.parentNode.removeChild(antiClickjack);
+	} else {
+		top.location = self.location;
+	}
+</script>
 <script type="text/javascript">
 	/* <![CDATA[ */
 	var url = window.location.href;
@@ -246,7 +259,7 @@ header ul li a {
 
 		<!-- Slider -->
 		<script src="/js/demo.js"></script>
-		
+
 		<script src="/js/classie.js"></script>
 		<script src="/js/owl.carousel.js"></script>
 		<link rel="stylesheet" href="css/bootstrap.min.css" />
@@ -275,18 +288,9 @@ header ul li a {
 		var cnzz_protocol = (("https:" == document.location.protocol) ? " https://"
 				: " http://");
 		document
-				.write(unescape("%3Cspan id='cnzz_stat_icon_1274261066'%3E%3C/span%3E%3Cscript src='"
-						+ cnzz_protocol
-						+ "s22.cnzz.com/z_stat.php%3Fid%3D1274261066' type='text/javascript'%3E%3C/script%3E"));
-	</script>
-	<script type="text/javascript">
-		var cnzz_protocol = (("https:" == document.location.protocol) ? " https://"
-				: " http://");
-		document
 				.write(unescape("%3Cspan id='cnzz_stat_icon_1274363830'%3E%3C/span%3E%3Cscript src='"
 						+ cnzz_protocol
 						+ "s13.cnzz.com/z_stat.php%3Fid%3D1274363830' type='text/javascript'%3E%3C/script%3E"));
 	</script>
-	<script type="text/javascript">var cnzz_protocol = (("https:" == document.location.protocol) ? " https://" : " http://");document.write(unescape("%3Cspan id='cnzz_stat_icon_1274363830'%3E%3C/span%3E%3Cscript src='" + cnzz_protocol + "s13.cnzz.com/z_stat.php%3Fid%3D1274363830%26online%3D1%26show%3Dline' type='text/javascript'%3E%3C/script%3E"));</script>
 </body>
 </html>

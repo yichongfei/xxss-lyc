@@ -146,6 +146,23 @@ public class HomeController {
 
 	}
 
+	
+	/**
+	 * 跨域跳转到观看视频页面
+	 * 
+	 * @return
+	 */
+	@RequestMapping("/iframe/goVideoPlay")
+	public String goVideoPlayWithIframe(HttpServletRequest request, Model model,
+			@RequestParam(value = "id", required = false, defaultValue = "") String id) {
+		model.addAttribute("id", id);
+		return "videoSinglePlay";
+
+	}
+	
+	
+	
+	
 	/**
 	 * 跳转到观看视频页面
 	 * 
