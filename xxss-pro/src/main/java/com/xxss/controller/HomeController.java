@@ -219,6 +219,9 @@ public class HomeController {
 	@RequestMapping("/video/getVideo")
 	@ResponseBody
 	public Video getVideoUrl(String id) {
+		if(id.endsWith("iframeload")) {
+			id=id.split("#")[0];
+		}
 		Video video = videoService.findById(id);
 		String preSignedURL = AmazonS3Object.getPreSignedURL(S3Config.VIDEOBUCKET, video.getMp4Key());
 		video.setPreUrl(preSignedURL);
