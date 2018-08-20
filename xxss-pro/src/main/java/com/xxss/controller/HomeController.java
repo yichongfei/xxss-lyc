@@ -341,11 +341,11 @@ public class HomeController {
 	 */
 	@RequestMapping("/zhuce")
 	@ResponseBody
-	public Result register(String email, String password) {
+	public Result register(String email, String password,String referrer) {
 		Account findByemail = accountService.findByemail(email);
 		Result result = new Result();
 		if (findByemail == null) {
-			accountService.save(new Account(email, password));
+			accountService.save(new Account(email, password,referrer));
 			result.setSuccess(true);
 			result.setInformation("注册成功,欢迎来到形形色色");
 			return result;
@@ -517,7 +517,6 @@ public class HomeController {
 			if (!account.getEmail().equals("游客")) {
 				return "index";
 			}
-			
 			
 			account = accountService.findByid(id);
 			if(account==null) {

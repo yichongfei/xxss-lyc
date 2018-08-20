@@ -37,6 +37,7 @@
 			var email = $("#email").val();
 			var password = $("#password").val();
 			var retypePassword = $("#retypePassword").val();
+			var referrer = $("#referrer").val();
 			if(password !== retypePassword){
 				alert("两次密码输入不一致");
 				return;
@@ -47,7 +48,7 @@
 			}
 			$.ajax({
 				url :"/zhuce",
-				data :{"email":email,"password":password},
+				data :{"email":email,"password":password,"referrer":referrer},
 				success : function(data){
 					debugger;
 					if(data.success == true){
@@ -99,6 +100,12 @@
 										type="password" class="form-control" id="retypePassword"
 										placeholder="请输入密码" />
 								</div>
+								<div class="form-group">
+									<label for="referrer">邀请人</label> <input
+										type="email" class="form-control" id="referrer"
+										placeholder="请填写邀请人,如果没有可不填" />
+								</div>
+								
 
 								<a href="javascript:void(0)" onclick="registerAccount()"
 									class="btn btn-primary btn-block">注册</a>

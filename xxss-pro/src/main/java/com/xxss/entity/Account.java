@@ -27,6 +27,8 @@ public class Account {
 	private long vipDeadline;// vip截止日期
 
 	
+	private String referrer;
+	
 	private String tuiguangURL;
 	
 	private int tuiguangTimes;
@@ -43,6 +45,15 @@ public class Account {
 		this.vip = false;
 		this.tuiguangURL =creatTuiguangUrl(id)+"欢迎观看形形色色华人社区,最精彩,等你来";
 	}
+	public Account(String email,String password,String referrer) {
+		this.id = UUID.randomUUID().toString();
+		this.email = email;
+		this.password = password;
+		this.vip = false;
+		this.referrer=referrer;
+		this.tuiguangURL =creatTuiguangUrl(id)+"欢迎观看形形色色华人社区,最精彩,等你来";
+	}
+	
 
 	/**
 	 * 判断是否过期
@@ -171,6 +182,14 @@ public class Account {
 
 	public void setTuiguangURL(String tuiguangURL) {
 		this.tuiguangURL = tuiguangURL;
+	}
+
+	public String getReferrer() {
+		return referrer;
+	}
+
+	public void setReferrer(String referrer) {
+		this.referrer = referrer;
 	}
 
 	
