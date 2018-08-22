@@ -85,10 +85,9 @@
 	</dependencies>
 
 
-	<!-- <build>
-        <finalName>xxss-pro</finalName>
-        <plugins>
-           <plugin>
+    <build>
+		<plugins>
+			<plugin>
 			    <groupId>org.springframework.boot</groupId>
 			    <artifactId>spring-boot-maven-plugin</artifactId>
 			    <version>1.5.3.RELEASE</version>
@@ -103,6 +102,6 @@
 			        </execution>
 			    </executions>
 			</plugin>
-        </plugins>
-    </build> -->
+		</plugins>
+	</build>
 </project>

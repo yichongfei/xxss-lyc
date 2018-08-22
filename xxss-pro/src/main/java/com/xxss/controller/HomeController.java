@@ -184,7 +184,7 @@ public class HomeController {
 
 		String addr = getIpAddr(request);
 		if (playTimes.containsKey(addr)) {
-			if (playTimes.get(addr) > 10) {
+			if (playTimes.get(addr) > S3Config.videoCanPlayTimes) {
 				return "videoPlayNon";
 			}
 
