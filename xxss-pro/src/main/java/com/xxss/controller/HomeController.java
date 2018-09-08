@@ -345,7 +345,8 @@ public class HomeController {
 		Account findByemail = accountService.findByemail(email);
 		Result result = new Result();
 		if (findByemail == null) {
-			accountService.save(new Account(email, password,referrer));
+			Account account = new Account(email, password);
+			accountService.save(account);
 			result.setSuccess(true);
 			result.setInformation("注册成功,欢迎来到形形色色");
 			return result;
