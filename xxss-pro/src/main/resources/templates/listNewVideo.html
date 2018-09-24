@@ -175,7 +175,7 @@ window.onload = function(){
 													onclick="goVideoPlay(this)" th:attr="data-id=${video.id}">
 													<span class="zoom-caption"> 
 												</span> <img class="imgheight"
-													th:src="@{https://s3-ap-southeast-1.amazonaws.com/talent-xinjiapo/{imgkey}(imgkey=${video.picKey})}" />
+													th:src="@{https://talent-xinjiapo.s3.amazonaws.com/{imgkey}(imgkey=${video.picKey})}" />
 												</a>
 											</div>
 											<h3 class="vid-name">
