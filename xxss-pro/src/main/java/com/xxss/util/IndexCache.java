@@ -27,25 +27,25 @@ public class IndexCache {
 	
 	
 	public  void updateCache() {
+		int page = (int)(1+Math.random()*10), size = 8;
+		
+		
 		Sort sort = new Sort(Direction.DESC, "uploadTime");
-		int page = 0, size = 8;
+		
 		Pageable pageable = new PageRequest(page, size, sort);
 		newVideoPicList=videoService.findAll(pageable).getContent();
 		
 		sort = new Sort(Direction.DESC, "playTimes");
-		page = 0; size = 8;
 		pageable = new PageRequest(page, size, sort);
 		MostViewedPicList = videoService.findAll(pageable).getContent();
 		
 		
 		sort = new Sort(Direction.DESC, "uploadTime");
-		page = 0;size = 8;
 		pageable = new PageRequest(page, size, sort);
 		ChinaViewPicList = videoService.findBycategory(pageable, "china");
 		
 		
 		sort = new Sort(Direction.DESC, "uploadTime");
-		page = 0;size = 8;
 		pageable = new PageRequest(page, size, sort);
 		AmericaViewPicList = videoService.findBycategory(pageable, "america");
 		
