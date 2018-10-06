@@ -53,14 +53,14 @@ public class SpringContext implements ApplicationContextAware {
 	public static void main(String[] args) throws Exception {
 		
 		//更新S3电影到数据库当中
-		  ApplicationContext ctx = SpringApplication.run(Application.class, args);
-		  
-		  VideoService VideoService= ctx.getBean(VideoService.class);
-		  
-		  AmazonS3Object S3 = new AmazonS3Object();
-		  
-		
-	      S3.saveVideo2DB(VideoService,"2018-09-13");
+//		  ApplicationContext ctx = SpringApplication.run(Application.class, args);
+//		  
+//		  VideoService VideoService= ctx.getBean(VideoService.class);
+//		  
+//		  AmazonS3Object S3 = new AmazonS3Object();
+//		  
+//		
+//	      S3.saveVideo2DB(VideoService,"2018-09-13");
 		
 	      
 		 
@@ -68,23 +68,23 @@ public class SpringContext implements ApplicationContextAware {
 		
 		
 //		生成card 存入数据库，并写入文件当中		
-//		List<Card> list = CardUtil.createCard(1);
-//
-//		ApplicationContext ctx = SpringApplication.run(Application.class, args);
-//
-//		CardService CardService = ctx.getBean(CardService.class);
-//
-//		CardService.save(list);
-//
-//		BufferedWriter bw = new BufferedWriter(new OutputStreamWriter(new FileOutputStream("E:\\card1.txt")));
-//
-//		for (Card card : list) {
-//			bw.write(card.getKey() + "  ");
-//			bw.write(card.getSecret() + "\r\n");
-//			bw.flush();
-//		}
-//		
-//		bw.close(); 
+		List<Card> list = CardUtil.createCard(1);
+
+		ApplicationContext ctx = SpringApplication.run(Application.class, args);
+
+		CardService CardService = ctx.getBean(CardService.class);
+
+		CardService.save(list);
+
+		BufferedWriter bw = new BufferedWriter(new OutputStreamWriter(new FileOutputStream("E:\\card1.txt")));
+
+		for (Card card : list) {
+			bw.write(card.getKey() + "  ");
+			bw.write(card.getSecret() + "\r\n");
+			bw.flush();
+		}
+		
+		bw.close(); 
 
 		
 		
