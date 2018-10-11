@@ -236,6 +236,11 @@ public class HomeController {
 	@RequestMapping("/video/getVideo")
 	@ResponseBody
 	public Video getVideoUrl(String id) {
+		
+		if(id == null) {
+			return null;
+		}
+		
 		if(id.endsWith("iframeload")) {
 			id=id.split("#")[0];
 		}
