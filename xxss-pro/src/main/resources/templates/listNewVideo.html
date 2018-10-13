@@ -88,24 +88,6 @@ function goVideoPlay(element){
 	}
 }
 $(function(){
-	$("img").addClass("img-rounded");
-	var count = $('#countvideos').attr('count');
-	var curpage = $('#curpage').attr('curpage')*1+1;
-	var videotype = $('#videotype').attr('videotype');
-	var pageCount = Math.ceil(count / 16);
-	$("#pagination3").pagination({
-		currentPage: curpage,
-		totalPage: pageCount,
-		isShow: true,
-		count: 5,
-		homePageText: "首页",
-		endPageText: "尾页",
-		prevPageText: "上一页",
-		nextPageText: "下一页",
-		callback: function(current) {
-			window.location.href = "/listVideo/"+videotype+"/"+(current*1-1);
-		}
-	});
 	$(".videoTime").each(function(){
 		$(this).html(new Date($(this).attr('longtime')*1).format('yyyy-MM-dd'));
 	});
@@ -259,7 +241,24 @@ window.onload = function(){
 	</div>
 	<script type="text/javascript">
 	/* <![CDATA[ */
-	
+	$("img").addClass("img-rounded");
+	var count = $('#countvideos').attr('count');
+	var curpage = $('#curpage').attr('curpage')*1+1;
+	var videotype = $('#videotype').attr('videotype');
+	var pageCount = Math.ceil(count / 16);
+	$("#pagination3").pagination({
+		currentPage: curpage,
+		totalPage: pageCount,
+		isShow: true,
+		count: 5,
+		homePageText: "首页",
+		endPageText: "尾页",
+		prevPageText: "上一页",
+		nextPageText: "下一页",
+		callback: function(current) {
+			window.location.href = "/listVideo/"+videotype+"/"+(current*1-1);
+		}
+	});
 	/*]]> */
 	</script>
 	<script src="/js/demo.js"></script>
