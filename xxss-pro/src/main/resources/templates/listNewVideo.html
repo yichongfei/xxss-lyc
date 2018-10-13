@@ -244,13 +244,11 @@ window.onload = function(){
 	<script type="text/javascript">
 	/* <![CDATA[ */
 	$("img").addClass("img-rounded");
-	var count = $('#countvideos').attr('count');
+	var count = $('#countpage').attr('count');
 	var curpage = $('#curpage').attr('curpage')*1+1;
-	var videotype = $('#videotype').attr('videotype');
-	var pageCount = Math.ceil(count / 16);
 	$("#pagination3").pagination({
 		currentPage: curpage,
-		totalPage: pageCount,
+		totalPage: count,
 		isShow: true,
 		count: 5,
 		homePageText: "首页",
@@ -258,7 +256,7 @@ window.onload = function(){
 		prevPageText: "上一页",
 		nextPageText: "下一页",
 		callback: function(current) {
-			window.location.href = "/listVideo/"+videotype+"/"+(current*1-1);
+			window.location.href = "/listNewVideo/"+(current*1-1);
 		}
 	});
 	/*]]> */
