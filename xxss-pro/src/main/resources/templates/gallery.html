@@ -85,24 +85,6 @@ function goVideoPlay(element){
 	}
 }
 $(function(){
-	$("img").addClass("img-rounded");
-	var count = $('#countvideos').attr('count');
-	var curpage = $('#curpage').attr('curpage')*1+1;
-	var videotype = $('#videotype').attr('videotype');
-	var pageCount = Math.ceil(count / 16);
-	$("#pagination3").pagination({
-		currentPage: curpage,
-		totalPage: pageCount,
-		isShow: true,
-		count: 5,
-		homePageText: "首页",
-		endPageText: "尾页",
-		prevPageText: "上一页",
-		nextPageText: "下一页",
-		callback: function(current) {
-			window.location.href = "/listVideo/"+videotype+"/"+(current*1-1);
-		}
-	});
 	$(".videoTime").each(function(){
 		$(this).html(new Date($(this).attr('longtime')*1).format('yyyy-MM-dd'));
 	});
@@ -201,14 +183,14 @@ window.onload = function(){
 								</div>
 								<div class="row">
 									<div class="tags">
-										<a href="http://www.zxq500.com"  target="blank">500福利导航</a>&nbsp;&nbsp;
-										<a href="http://www.greendh.xyz/"  target="blank">绿色小导航</a>&nbsp;&nbsp;
-										<a href="http://www.zhaoav11.club"  target="blank">找AV导航</a>&nbsp;&nbsp;
-										<a href="http://www.your.cf"  target="blank">正品蓝导航</a>&nbsp;&nbsp;
-										<a href="http://www.sav1.xyz"  target="blank">上AV导航</a>&nbsp;&nbsp;
+										<a href="http://cmdh.top " target="blank">草莓导航</a> &nbsp;&nbsp;
+										<a href="http://www.biyudh.xyz/" target="blank">碧玉AV导航 </a> &nbsp;&nbsp;
+										<a href="https://www.209951.com" target="blank">乱片在线导航 </a> &nbsp;&nbsp;
+										<a href="http://11qns.com/" target="blank">清风涩 </a> &nbsp;&nbsp;
+										<a href="http://www.118dh.vip"  target="blank">118福利导航</a>&nbsp;&nbsp;
+										<a href="http://www.qingsedh.info" target="blank">青色导航 </a>&nbsp;&nbsp;
 										<a href="http://www.fuhaodh.xyz"  target="blank">大富豪福利导航</a>&nbsp;&nbsp;
 										<a href="http://www.amen168.com" target="blank">A门导航 </a>&nbsp;&nbsp;
-										<a href="http://www.ningmeng.email/" target="blank">柠檬导航 </a> &nbsp;&nbsp;
 										<a href="http://www.dafjdh.cc" target="blank">打飞机导航 </a> &nbsp;&nbsp;
 										<a href="https://www.mglsdh.com" target="blank">美国绿色导航 </a> &nbsp;&nbsp;
 									</div>
@@ -255,6 +237,29 @@ window.onload = function(){
 			</div>
 		</footer>
 	</div>
+	<script type="text/javascript">
+	/* <![CDATA[ */
+	$("img").addClass("img-rounded");
+	var count = $('#countvideos').attr('count');
+	var curpage = $('#curpage').attr('curpage')*1+1;
+	var videotype = $('#videotype').attr('videotype');
+	var pageCount = Math.ceil(count / 16);
+	$("#pagination3").pagination({
+		currentPage: curpage,
+		totalPage: pageCount,
+		isShow: true,
+		count: 5,
+		homePageText: "首页",
+		endPageText: "尾页",
+		prevPageText: "上一页",
+		nextPageText: "下一页",
+		callback: function(current) {
+			window.location.href = "/listVideo/"+videotype+"/"+(current*1-1);
+		}
+	});
+	/*]]> */
+	</script>
+	
 	<script src="/js/demo.js"></script>
 	<script src="/js/util.js"></script>
 	<script src="/js/classie.js"></script>
