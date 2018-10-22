@@ -20,7 +20,7 @@ import com.xxss.dao.VideoService;
 import com.xxss.entity.Card;
 public class CardUtil {
 	
-	public static final int times = 200;
+	public static final int times = 2000;
 	
 	public static List<Card> createCard(int months) { 
 		List<Card> list = new ArrayList<Card>();

@@ -1,7 +1,7 @@
 package com.xxss.config;
 
 public class S3Config {
-	public static final String VIDEOBUCKET = "talent-xinjiapo";
+	public static final String VIDEOBUCKET = "talent-elg";
 	
 	public static final String AMERICA = "america";
 	

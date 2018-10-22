@@ -20,6 +20,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 
+import com.xxss.aws.cloudfront.CloudFront;
 import com.xxss.aws.s3.AmazonS3Object;
 import com.xxss.config.S3Config;
 import com.xxss.dao.AccountService;
@@ -245,7 +246,8 @@ public class HomeController {
 			id=id.split("#")[0];
 		}
 		Video video = videoService.findById(id);
-		String preSignedURL = AmazonS3Object.getPreSignedURL(S3Config.VIDEOBUCKET, video.getMp4Key());
+		//String preSignedURL = AmazonS3Object.getPreSignedURL(S3Config.VIDEOBUCKET, video.getMp4Key());
+		String preSignedURL = CloudFront.getPreUrl(video.getMp4Key());
 		video.setPreUrl(preSignedURL);
 		return video;
 	}
