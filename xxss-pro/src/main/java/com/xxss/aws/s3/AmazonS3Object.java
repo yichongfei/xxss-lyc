@@ -34,7 +34,7 @@ import com.xxss.dao.VideoService;
 import com.xxss.entity.Video;
 
 public class AmazonS3Object {
-	private static final Regions region = Regions.AP_SOUTHEAST_1;
+	private static final Regions region = Regions.US_WEST_2;
 	
 	private static AmazonS3 s3 = AmazonS3ClientBuilder.standard().withRegion(region.getName())
 			.withCredentials(new ProfileCredentialsProvider()).build();
