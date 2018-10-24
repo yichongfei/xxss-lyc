@@ -60,6 +60,15 @@ public class HomeController {
 	
 	public static long dayEnd = getEndTime();
 
+	
+	
+	@RequestMapping("/ckplayertest")
+	public String ckplayertest(Model model, HttpServletRequest request) {
+		return "ckplayer";
+	}
+	
+	
+	
 	@RequestMapping("/")
 	public String index(Model model, HttpServletRequest request) {
 		return "index";
